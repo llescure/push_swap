@@ -1,17 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: llescure <llescure@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/01 13:09:20 by llescure          #+#    #+#             */
+/*   Updated: 2021/06/01 13:09:30 by llescure         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "include/push_swap.h"
 
-void	check_list(t_double_list **stack_a)
+void	check_number(long number, t_double_list **stack_a)
 {
-	t_double_list	*temp;
-
-	temp = *stack_a;
-	while (temp != NULL)
-	{
-		if (temp->content < -2147483647
-			|| temp->content > 2147483647)
-			print_error(stack_a);
-		temp = temp->next;
-	}
+	if (number < -2147483647 || number > 2147483647)
+		print_error(stack_a);
 }
 
 void	check_duplicates_list(char *str, char **argv, int i, t_double_list
@@ -40,15 +44,16 @@ void	nb_is_decim(char *str, t_double_list **stack_a, int true_false)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		while (ft_isdigit(str[i]) == 1 || str[i] == '-')
+		while (str[i] == '-')
+			i++;
+		if (i > 1)
+			print_error(stack_a);
+		while (ft_isdigit(str[i]) == 1)
 			i++;
 		if (str[i] != ' ' && str[i] != '\0' && true_false != 1)
 			print_error(stack_a);
 		else if (str[i] != ' ' && str[i] != '\0' && true_false == 1)
-		{
-			printf("Error\n");
-			exit(0);
-		}
+			print_error(stack_a);
 	}
 }
 

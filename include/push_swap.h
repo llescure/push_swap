@@ -24,7 +24,7 @@ typedef struct s_compt
 ** Parsing
 */
 
-void	check_list(t_double_list **stack_a);
+void	check_number(long number, t_double_list **stack_a);
 void	check_duplicates_list(char *str, char **argv, int i,
 			t_double_list **stack_a);
 void	nb_is_decim(char *str, t_double_list **stack_a, int true_false);
@@ -62,9 +62,9 @@ void	large_sorting(t_double_list **stack_a, t_double_list **stack_b,
 			t_compt *compt);
 int		stack_is_sorted(t_double_list *stack);
 void	move_to_top_stack_a(int nb, t_double_list **stack, t_compt *compt,
-				int pos);
+			int pos);
 void	move_to_top_stack_b(int nb, t_double_list **stack, t_compt *compt,
-				int pos);
+			int pos);
 void	sort_stack_b(t_double_list **stack_a, t_double_list **stack_b,
 			t_compt *compt);
 int		smallest_number_list(t_double_list **stack);

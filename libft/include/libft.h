@@ -6,7 +6,7 @@
 /*   By: llescure <llescure@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/25 20:02:11 by llescure          #+#    #+#             */
-/*   Updated: 2021/05/20 10:34:58 by llescure         ###   ########.fr       */
+/*   Updated: 2021/06/01 13:08:38 by llescure         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int				ft_isdigit(int c);
  ** Convert
 */
 
-int				ft_atoi(const char *str);
+long			ft_atoi(const char *str);
 char			*ft_itoa(int n);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
