@@ -150,15 +150,11 @@ fi
 
 echo "${CYAN}\nRandom test"
 
-read -p 'Enter number of test :' TESTN
-read -p 'Enter interval with format [first number .. last_number] :' INTERVAL 
-if [ -z $TESTN ] || [ -z $INTERVAL ]
-then
-	#Explain to the user what the tester is supposed to be given
-	echo "\n"
-	echo "${RED}number_of_test format integer"
-	echo "${RED}interval_of_the test format [first_number .. last_number]"
-else
+while [ -z $TESTN ] || [ -z $INTERVAL ]
+do
+	read -p 'Enter number of test :' TESTN
+	read -p 'Enter interval with format first number .. last_number :' INTERVAL
+done
 	#Make a loop to generate tests
 	for i in `seq 1 $TESTN`
 	do
@@ -177,4 +173,3 @@ else
 			echo "${RED}FAIL\n"
 		fi
 	done
-fi
