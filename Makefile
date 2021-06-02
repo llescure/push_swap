@@ -52,6 +52,7 @@ clean:
 
 fclean:  clean
 	@echo "$(RED)Deleting executables$(RESET)"
+	make fclean -C libft
 	@($(RM) $(NAME))
 
 re: fclean all
